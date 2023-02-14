@@ -1,0 +1,9 @@
+In GET METHODSnumber_range and t.number_range like '00124282%%'select m.* from 			(select t.*, row_number() over (order by t.number_range) as rn from DCM_DIAL_CODE t where upper(t.number_range_type)= 'INT' and t.number_range like '00124282%%') m 			 where rn>0 and rn<=500 order by rn
+******select m.* from 			(select t.*, row_number() over (order by t.number_range) as rn from DCM_DIAL_CODE t where upper(t.number_range_type)= 'INT' and t.number_range like '00124282%%') m 			 where rn>0 and rn<=500 order by rn*************
+
+1
+
+1
+
+****DCM_COUNT***:1
+EXPORT:select t.*, row_number() over (order by t.number_range) as rn from DCM_DIAL_CODE t where upper(t.number_range_type)= 'INT' and t.number_range like '00124282%%'
